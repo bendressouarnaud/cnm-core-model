@@ -1,6 +1,6 @@
 package com.cnmci.core.model;
 
-import com.cnmci.artisan.enums.StatutEntreprise;
+import com.cnmci.core.enums.StatutEntreprise;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
