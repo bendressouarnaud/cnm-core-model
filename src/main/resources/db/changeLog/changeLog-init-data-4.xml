@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet  author="ankk (manually)"  id="14122025-2250">
+
+        <!-- PartenairePrestation SFP - ENROLEMENT-->
+        <insert tableName='partenaire_prestation'>
+            <column name='valeur' value='15'/>
+            <column name='remuneration_id' value='1'/>
+            <column name='partenaire_id' value='2'/>
+            <column name='prestation_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,28 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet  author="ankk (manually)"  id="10122025-1647">
+
+        <!-- PAYS -->
+        <insert tableName='pays'>
+            <column name='libelle' value="TOGO"/>
+            <column name='code' value="TOG"/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='pays'>
+            <column name='libelle' value="BENIN"/>
+            <column name='code' value="BEN"/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <!-- metier -->
+        <insert tableName='METIER'>
+            <column name='libelle' value='Mécanicien'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Garagiste'/>
+            <column name='version' value='0'/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
