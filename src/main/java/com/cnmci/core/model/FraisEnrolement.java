@@ -1,6 +1,6 @@
 package com.cnmci.core.model;
 
-import com.cnmci.artisan.enums.CategorieEnrolement;
+import com.cnmci.core.enums.CategorieEnrolement;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
