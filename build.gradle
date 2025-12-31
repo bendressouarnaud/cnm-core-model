@@ -50,6 +50,9 @@ dependencies {
 
 	implementation "org.liquibase:liquibase-maven-plugin:${liquibaseVersion}"
 	implementation "org.projectlombok:lombok:${lombokVersion}"
+	liquibaseRuntime("info.picocli:picocli:4.7.6")
+	liquibaseRuntime "org.liquibase:liquibase-core:${liquibaseVersion}"
+	liquibaseRuntime("org.postgresql:postgresql")
 	liquibaseRuntime "org.liquibase.ext:liquibase-hibernate6:${liquibaseVersion}"
 	liquibaseRuntime 'org.springframework:spring-context:6.0.9'
 	liquibaseRuntime 'org.springframework:spring-orm:6.0.9'
@@ -64,7 +67,7 @@ tasks.named('test') {
 liquibase {
 	activities {
 		postgres {
-			changelogFile       'src/main/resources/db/changeLog/changeLog-2.xml'
+			changelogFile       'src/main/resources/db/changeLog/changeLog-3.xml'
 			overwriteOutputFile true
 			referenceUrl(       'hibernate:spring:com.cnmci.core.model?'
 					+ 'dialect=org.hibernate.dialect.PostgreSQLDialect'

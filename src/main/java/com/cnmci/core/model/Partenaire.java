@@ -26,4 +26,7 @@ public class Partenaire extends AbstractEntity {
 
     @OneToMany(fetch = LAZY, mappedBy = "partenaire", orphanRemoval = true)
     private Collection<PartenairePrestation> partenairePrestations;
+
+    @OneToMany(fetch = LAZY, mappedBy = "partenaire", orphanRemoval = true)
+    private Collection<GainEnrolement> gainEnrolements;
 }
