@@ -159,7 +159,7 @@ public class Artisan extends AbstractEntity{
     private Collection<PaiementEnrolement> paiementEnrolements;
 
     /**   CRM de l'ARTISAN   **/
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "crm_id", nullable = true ,
             foreignKey = @ForeignKey(name = "FK_crm_artisan"))
     private Crm crm;
