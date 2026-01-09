@@ -1,0 +1,43 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet  author="ankk (manually)"  id="24122025-1135">
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Échafaudeur'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <insert tableName='diplome'>
+            <column name='libelle' value='BTS'/>
+            <column name='actif' value='true'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <insert tableName='classe'>
+            <column name='libelle' value='BAC + 1'/>
+            <column name='actif' value='true'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <insert tableName='classe'>
+            <column name='libelle' value='BAC + 2'/>
+            <column name='actif' value='true'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <!-- DEFAULT Values -->
+        <update tableName="entreprise">
+            <column name="crm_id" value="1"/>
+            <!--<where>ID=2</where>-->
+        </update>
+
+        <update tableName="entreprise">
+            <column name="departement_id" value="1"/>
+        </update>
+
+        <update tableName="entreprise">
+            <column name="sous_prefecture_id" value="498"/>
+        </update>
+
+    </changeSet>
+</databaseChangeLog>
