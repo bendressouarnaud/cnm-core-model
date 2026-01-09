@@ -35,4 +35,7 @@ public class Crm extends AbstractEntity{
     @OneToMany(fetch = LAZY, mappedBy = "crm")
     private Collection<Artisan> artisans;
 
+    @OneToMany(fetch = LAZY, mappedBy = "crm")
+    private Collection<Entreprise> entreprises;
+
 }

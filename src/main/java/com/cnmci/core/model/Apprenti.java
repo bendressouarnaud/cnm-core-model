@@ -40,6 +40,9 @@ public class Apprenti extends AbstractEntity{
     private OffsetDateTime dateNaissance;
     //private String lieuNaissance;
 
+    private OffsetDateTime dateEmission;
+    private OffsetDateTime dateExpiration;
+
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "commune_naissance_id", nullable = true ,
             foreignKey = @ForeignKey(name = "FK_commune_naissance_apprenti"))
