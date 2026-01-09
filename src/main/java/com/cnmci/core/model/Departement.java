@@ -37,4 +37,7 @@ public class Departement extends AbstractEntity{
     @OneToMany(fetch = LAZY, mappedBy = "departement")
     private Collection<Artisan> artisans;
 
+    @OneToMany(fetch = LAZY, mappedBy = "departement")
+    private Collection<Entreprise> entreprises;
+
 }

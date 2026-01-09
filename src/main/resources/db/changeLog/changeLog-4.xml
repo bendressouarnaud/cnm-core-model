@@ -1,0 +1,72 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1767951515363-1">
+        <addColumn tableName="entreprise">
+            <column name="crm_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-2">
+        <addColumn tableName="apprenti">
+            <column name="date_emission" type="timestamp(6)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-3">
+        <addColumn tableName="artisan">
+            <column name="date_emission" type="timestamp(6)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-4">
+        <addColumn tableName="compagnon">
+            <column name="date_emission" type="timestamp(6)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-5">
+        <addColumn tableName="apprenti">
+            <column name="date_expiration" type="timestamp(6)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-6">
+        <addColumn tableName="artisan">
+            <column name="date_expiration" type="timestamp(6)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-7">
+        <addColumn tableName="compagnon">
+            <column name="date_expiration" type="timestamp(6)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-8">
+        <addColumn tableName="entreprise">
+            <column name="departement_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-9">
+        <addColumn tableName="entreprise">
+            <column name="sous_prefecture_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-10">
+        <createIndex indexName="crm_entreprise_id_idx" tableName="entreprise">
+            <column name="crm_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-11">
+        <createIndex indexName="departement_entreprise_id_idx" tableName="entreprise">
+            <column name="departement_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-12">
+        <createIndex indexName="sous_prefecture_entreprise_id_idx" tableName="entreprise">
+            <column name="sous_prefecture_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-13">
+        <addForeignKeyConstraint baseColumnNames="crm_id" baseTableName="entreprise" constraintName="FK_crm_entreprise" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="crm" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-14">
+        <addForeignKeyConstraint baseColumnNames="departement_id" baseTableName="entreprise" constraintName="FK_departement_entreprise" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="departement" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1767951515363-15">
+        <addForeignKeyConstraint baseColumnNames="sous_prefecture_id" baseTableName="entreprise" constraintName="FK_sous_prefecture_entreprise" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="sous_prefecture" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

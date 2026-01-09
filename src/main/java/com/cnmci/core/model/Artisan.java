@@ -139,6 +139,10 @@ public class Artisan extends AbstractEntity{
     private String cnps;
     private String cmu;
     private boolean presenceCompteBancaire;
+
+    private OffsetDateTime dateEmission;
+    private OffsetDateTime dateExpiration;
+
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "compte_bancaire_id", nullable = true ,
             foreignKey = @ForeignKey(name = "FK_compte_bancaire_artisan"))

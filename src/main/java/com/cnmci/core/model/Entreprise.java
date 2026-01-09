@@ -24,6 +24,10 @@ import static jakarta.persistence.FetchType.LAZY;
                 @Index(name = "activite_secondaire_entreprise_id_idx", columnList = "activite_secondaire_id"),
                 @Index(name = "utilisateur_entreprise_id_idx", columnList = "utilisateur_id"),
                 @Index(name = "gerant_entreprise_id_idx", columnList = "gerant_id"),
+
+                @Index(name = "crm_entreprise_id_idx", columnList = "crm_id"),
+                @Index(name = "departement_entreprise_id_idx", columnList = "departement_id"),
+                @Index(name = "sous_prefecture_entreprise_id_idx", columnList = "sous_prefecture_id")
         }
 )
 @NoArgsConstructor
@@ -84,6 +88,23 @@ public class Entreprise extends AbstractEntity{
     @JoinColumn(name = "gerant_id", nullable = true ,
             foreignKey = @ForeignKey(name = "FK_gerant_entreprise"))
     private Gerant gerant;
+
+    // NEW ONES
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "crm_id", nullable = true ,
+            foreignKey = @ForeignKey(name = "FK_crm_entreprise"))
+    private Crm crm;
+
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "departement_id", nullable = true ,
+            foreignKey = @ForeignKey(name = "FK_departement_entreprise"))
+    private Departement departement;
+
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "sous_prefecture_id", nullable = true ,
+            foreignKey = @ForeignKey(name = "FK_sous_prefecture_entreprise"))
+    private SousPrefecture sousPrefecture;
+    //
 
     @OneToMany(fetch = LAZY, mappedBy = "entreprise", orphanRemoval = true)
     private Collection<EntrepriseApprenti> entrepriseApprentis;

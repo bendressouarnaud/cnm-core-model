@@ -37,4 +37,7 @@ public class SousPrefecture extends AbstractEntity{
     @OneToMany(fetch = LAZY, mappedBy = "sousPrefecture")
     private Collection<Artisan> artisans;
 
+    @OneToMany(fetch = LAZY, mappedBy = "sousPrefecture")
+    private Collection<Entreprise> entreprises;
+
 }
