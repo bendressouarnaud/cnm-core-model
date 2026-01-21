@@ -52,6 +52,9 @@ public class Entreprise extends AbstractEntity{
     private String adresse;
     private String quartier;
 
+    private OffsetDateTime dateEmission;
+    private OffsetDateTime dateExpiration;
+
     @Enumerated(EnumType.ORDINAL)
     private StatutEntreprise statut;
 
