@@ -27,7 +27,9 @@ import static jakarta.persistence.FetchType.LAZY;
 
                 @Index(name = "crm_entreprise_id_idx", columnList = "crm_id"),
                 @Index(name = "departement_entreprise_id_idx", columnList = "departement_id"),
-                @Index(name = "sous_prefecture_entreprise_id_idx", columnList = "sous_prefecture_id")
+                @Index(name = "sous_prefecture_entreprise_id_idx", columnList = "sous_prefecture_id"),
+
+                @Index(name = "quartier_entreprise_id_idx", columnList = "quartier_siege_id")
         }
 )
 @NoArgsConstructor
@@ -107,6 +109,12 @@ public class Entreprise extends AbstractEntity{
     @JoinColumn(name = "sous_prefecture_id", nullable = true ,
             foreignKey = @ForeignKey(name = "FK_sous_prefecture_entreprise"))
     private SousPrefecture sousPrefecture;
+
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "quartier_siege_id", nullable = true ,
+            foreignKey = @ForeignKey(name = "FK_quartier_entreprise"))
+    private Quartier quartierSiegeId;
+
     //
 
     @OneToMany(fetch = LAZY, mappedBy = "entreprise", orphanRemoval = true)

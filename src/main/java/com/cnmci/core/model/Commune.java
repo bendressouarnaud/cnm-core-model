@@ -58,4 +58,8 @@ public class Commune extends AbstractEntity{
     @OneToMany(fetch = LAZY, mappedBy = "lieuNaissance")
     private Collection<Gerant> gerantsNaissance;
 
+    // QUARTIER
+    @OneToMany(fetch = LAZY, mappedBy = "commune")
+    private Collection<Quartier> quartiers;
+
 }

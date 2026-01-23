@@ -1,0 +1,67 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1769206607371-1">
+        <createSequence incrementBy="50" sequenceName="quartier_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-2">
+        <createTable tableName="quartier">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="quartierPK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="libelle" type="VARCHAR(255)"/>
+            <column name="commune_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-3">
+        <addColumn tableName="artisan">
+            <column name="quartier_residence_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-4">
+        <addColumn tableName="activite">
+            <column name="quartier_siege_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-5">
+        <addColumn tableName="entreprise">
+            <column name="quartier_siege_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-6">
+        <createIndex indexName="commune_quartier_id_idx" tableName="quartier">
+            <column name="commune_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-7">
+        <createIndex indexName="quartier_activite_id_idx" tableName="activite">
+            <column name="quartier_siege_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-8">
+        <createIndex indexName="quartier_entreprise_id_idx" tableName="entreprise">
+            <column name="quartier_siege_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-9">
+        <createIndex indexName="quartier_residence_id_idx" tableName="artisan">
+            <column name="quartier_residence_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-10">
+        <addForeignKeyConstraint baseColumnNames="commune_id" baseTableName="quartier" constraintName="FK_commune_quartier" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="commune" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-11">
+        <addForeignKeyConstraint baseColumnNames="quartier_siege_id" baseTableName="activite" constraintName="FK_quartier_activite" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="quartier" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-12">
+        <addForeignKeyConstraint baseColumnNames="quartier_siege_id" baseTableName="entreprise" constraintName="FK_quartier_entreprise" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="quartier" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1769206607371-13">
+        <addForeignKeyConstraint baseColumnNames="quartier_residence_id" baseTableName="artisan" constraintName="FK_quartier_residence_artisan" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="quartier" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
