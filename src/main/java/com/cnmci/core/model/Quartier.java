@@ -13,6 +13,7 @@ import static jakarta.persistence.FetchType.LAZY;
 @Setter
 @SuperBuilder
 @Entity
+@NoArgsConstructor
 @Table(
     indexes = {
         @Index(name = "commune_quartier_id_idx", columnList = "commune_id"),
