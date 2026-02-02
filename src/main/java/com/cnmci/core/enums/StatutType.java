@@ -9,7 +9,9 @@ public enum StatutType {
 
     ENROLE(0),
     IMMATRICULE(1),
-    REJETE(2);
+    REJETE(2),
+    RENOUVELLEMENT(3);
+
 
     private final int value;
 
