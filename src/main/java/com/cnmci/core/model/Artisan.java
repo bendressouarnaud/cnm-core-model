@@ -145,6 +145,8 @@ public class Artisan extends AbstractEntity{
     private OffsetDateTime dateEmission;
     private OffsetDateTime dateExpiration;
 
+    private String codeActivation;
+
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "compte_bancaire_id", nullable = true ,
             foreignKey = @ForeignKey(name = "FK_compte_bancaire_artisan"))
