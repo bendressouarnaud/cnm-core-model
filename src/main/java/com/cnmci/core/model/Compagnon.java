@@ -42,6 +42,7 @@ public class Compagnon extends AbstractEntity{
     private OffsetDateTime dateExpiration;
 
     private String codeActivation;
+    private boolean livraisonCarte;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "commune_naissance_id", nullable = true ,

@@ -66,6 +66,7 @@ public class Gerant extends AbstractEntity{
     private String contact1;
     private String contact2;
     private String email;
+    private boolean livraisonCarte;
 
     @OneToMany(fetch = LAZY, mappedBy = "gerant", orphanRemoval = true)
     private Collection<Entreprise> entreprises;

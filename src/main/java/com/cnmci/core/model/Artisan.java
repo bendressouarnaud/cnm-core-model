@@ -146,6 +146,7 @@ public class Artisan extends AbstractEntity{
     private OffsetDateTime dateExpiration;
 
     private String codeActivation;
+    private boolean livraisonCarte;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "compte_bancaire_id", nullable = true ,
