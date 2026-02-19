@@ -1521,4 +1521,5 @@
     <include file="db/changeLog/changeLog-init-data-12.xml"/>
     <include file="db/changeLog/changeLog-8.xml"/>
     <include file="db/changeLog/changeLog-9.xml"/>
+    <include file="db/changeLog/changeLog-10.xml"/>
 </databaseChangeLog>

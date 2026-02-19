@@ -66,6 +66,12 @@ public class Entreprise extends AbstractEntity{
     private Double latitude;
     private int print;
 
+    // Fichier 19/02/2026
+    @Column(length = 50)
+    private String registreCommerce;
+    @Column(length = 50)
+    private String dfe;
+
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "utilisateur_id", nullable = true ,foreignKey = @ForeignKey(name = "FK_utilisateur_entreprise"))
     private Utilisateur utilisateur;

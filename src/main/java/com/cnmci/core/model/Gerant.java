@@ -68,6 +68,12 @@ public class Gerant extends AbstractEntity{
     private String email;
     private boolean livraisonCarte;
 
+    // Fichier 19/02/2026
+    @Column(length = 50)
+    private String pieceIdentiteRecto;
+    @Column(length = 50)
+    private String pieceIdentiteVerso;
+
     @OneToMany(fetch = LAZY, mappedBy = "gerant", orphanRemoval = true)
     private Collection<Entreprise> entreprises;
 
