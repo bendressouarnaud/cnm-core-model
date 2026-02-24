@@ -1,0 +1,1195 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet  author="ankk (manually)"  id="23022026-2022">
+
+        <!-- Branche -->
+        <insert tableName='branche_activite'>
+            <column name='libelle' value='Agro-alimentaire, alimentation, restauration'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <!-- metier -->
+        <update tableName="metier">
+            <column name="branche_activite_id" value="1"/>
+            <where>libelle='Meunier'</where>
+        </update>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Transformateur et conservateur de fruits, légumes, noix et feuilles'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de condiments et assaisonnements'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Transformateur de grains et de tubercules'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de produits amylacés'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’huiles et de graisses brutes, raffinées et comestibles'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="1"/>
+            <where>libelle='Boucher'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="1"/>
+            <where>libelle='Charcutier'</where>
+        </update>
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Transformateur et conservateurs de viande et de volailles'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Préparateur de produits à base de viande'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Transformateur et conservateur de poissons'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Transformateur et conservateur de crustacées et de mollusques'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de produits laitiers'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de glaces alimentaires'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de beurre'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="libelle" value="Fabricant de fromage"/>
+            <column name="branche_activite_id" value="1"/>
+            <where>libelle='Fromager'</where>
+        </update>
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de beurre de karité'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de boissons artisanales à base de fruits, de légumes, de céréales et de tubercules'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’eau de boisson'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Préparateur de jus fruits et légumes'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’autres produits alimentaires'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="1"/>
+            <where>libelle='Boulanger'</where>
+        </update>
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Boulanger-pâtissier'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="1"/>
+            <where>libelle='Pâtissier'</where>
+        </update>
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Biscuitier'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de friandises à base d’arachide, de sucre caramélé, de miel (apiculteurs), de pâtes alimentaires'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="1"/>
+            <where>libelle='Restaurateur'</where>
+        </update>
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Traiteur'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="libelle" value="Cuisinier et métiers connexes"/>
+            <column name="branche_activite_id" value="1"/>
+            <where>libelle='Cuisinier'</where>
+        </update>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de plats préparés'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de galettes, de beignets et d’autres produits alimentaires'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de sels'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’aliments pour animaux'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’engrais organiques'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Transformateur de déchets organiques'/>
+            <column name='branche_activite_id' value='1'/>
+            <column name='version' value='0'/>
+        </insert>
+
+
+
+        <!-- B R A N C H E -->
+        <insert tableName='branche_activite'>
+            <column name='libelle' value='Mines et carrières, construction et bâtiment'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="2"/>
+            <where>libelle='Orpailleur traditionnel'</where>
+        </update>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Extracteur de produits de carrières'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Extracteur d’argiles'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Extracteur de minéraux chimiques'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Extracteur d’engrais minéraux'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Producteur de sel et autres activités extractives'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Puisatier et autres spécialistes d’activités de forage'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="2"/>
+            <where>libelle='Tailleur de pierre'</where>
+        </update>
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fondeur de pierre'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Marbrier'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="2"/>
+            <where>libelle='Briquetier'</where>
+        </update>
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Bétonnier'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Tuilier et autres'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de matériaux de construction'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="2"/>
+            <where>libelle='Maçon'</where>
+        </update>
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Spécialiste en réhabilitation de bâtiments'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Constructeur de cases'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Constructeur d’ouvrages d’art'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Aménagiste de chaussée'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Poseur de pavés'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="2"/>
+            <where>libelle='Charpentier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="2"/>
+            <where>libelle='Plombier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="2"/>
+            <where>libelle='Carreleur'</where>
+        </update>
+        <update tableName="metier">
+            <column name="libelle" value="Spécialiste en étanchéité"/>
+            <column name="branche_activite_id" value="2"/>
+            <where>libelle='Étanchéité'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="2"/>
+            <where>libelle='Vitrier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="2"/>
+            <where>libelle='Plâtrier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="2"/>
+            <where>libelle='Peintre bâtiment'</where>
+        </update>
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Coffreur'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Poseur d’enduits'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Spécialiste en revêtement'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Miroitier'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Ferrailleur bâtiment'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Décorateur-staffeur'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Électriciens bâtiment'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Dessinateurs bâtiment'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Autres spécialistes de travaux spécialisés'/>
+            <column name='branche_activite_id' value='2'/>
+            <column name='version' value='0'/>
+        </insert>
+
+
+        <!-- B R A N C H E -->
+        <insert tableName='branche_activite'>
+            <column name='libelle' value='Métaux, et constructions métalliques, mécanique, électromécanique, électronique, électricité et petites activités de transport'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="3"/>
+            <where>libelle='Forgeron'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="3"/>
+            <where>libelle='Chaudronnier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="3"/>
+            <where>libelle='Ferrailleur'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="3"/>
+            <where>libelle='Soudeur'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="3"/>
+            <where>libelle='Vulcanisateur'</where>
+        </update>
+        <update tableName="metier">
+            <column name="libelle" value="Électricien automobile"/>
+            <column name="branche_activite_id" value="3"/>
+            <where>libelle='ÉLECTRICIEN AUTO'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="3"/>
+            <where>libelle='Électronicien'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="3"/>
+            <where>libelle='Horloger'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="3"/>
+            <where>libelle='Serrurier'</where>
+        </update>
+
+
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Métallurgiste'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Tourneur'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fraiseur'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Affûteur'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de matériels et équipements agricoles et forestiers'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fondeur'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Outilleur'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de mobilier en fer forgé'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Menuisier métallique'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Menuisier aluminium'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Tréfileur'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Modeleur sur métaux'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Réparateur et mécanicien de véhicules'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Réparateur et mécanicien cycles'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Réparateur et mécanicien cyclomoteurs'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Réparateur de pompe hydraulique'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Carrossier (Tôliers)'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Peintre engins'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Peintre engins'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Mécatronicien'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Ajusteur d’appareils électriques'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de machines et matériels agricoles'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Réparateur de matériels de transport fluvial et naval'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Conducteur de taxis compteurs'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Conducteur de VTC'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Conducteur de taxis communaux'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Conducteur de taxis motos'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Livreur'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Conducteur de charrette'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Conducteur de pirogues'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Conducteur de pousse-pousse'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Docker'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Service de déménagement'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Réparateur d’ordinateurs et d’équipements périphériques, d’équipements de communication'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Installateur et réparateurs d’appareils médicaux'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Opticien et réparateur de lunettes'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant et réparateurs de machines-outils'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant et réparateurs de petit outillage'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant et réparateurs d’équipements de foyers'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant et réparateurs d’articles de sport'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant et réparateur d’appareils de haute précision'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Spécialiste en froid climatisation'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Rebobineur'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Réparateur d’appareils électriques'/>
+            <column name='branche_activite_id' value='3'/>
+            <column name='version' value='0'/>
+        </insert>
+
+
+        <!-- B R A N C H E -->
+        <insert tableName='branche_activite'>
+            <column name='libelle' value='Bois et assimilés, mobilier et ameublement'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="4"/>
+            <where>libelle='MENUISIER BOIS'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="4"/>
+            <where>libelle='Ébéniste'</where>
+        </update>
+
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Bucheron'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Charbonnier'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Scieur de bois'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Constructeur de pirogues et embarcations'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de tam-tam'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’instruments de musique en bois'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Sculpteur sur bois, objets divers à base de bois'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’articles en liège'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’articles en sparterie'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’objets en fibres végétales'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’articles en pailles'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Menuisier sur bambous, rônier et rotin'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Menuisier de meubles divers à base de végétaux'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de mortiers'/>
+            <column name='branche_activite_id' value='4'/>
+            <column name='version' value='0'/>
+        </insert>
+
+
+        <!-- B R A N C H E -->
+        <insert tableName='branche_activite'>
+            <column name='libelle' value='Textile, habillement, cuirs et peaux'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="5"/>
+            <where>libelle='Tisserand'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="5"/>
+            <where>libelle='Tailleur'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="5"/>
+            <where>libelle='Couturier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="5"/>
+            <where>libelle='Brodeur'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="5"/>
+            <where>libelle='Teinturier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="5"/>
+            <where>libelle='Tapissier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="5"/>
+            <where>libelle='Tanneur'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="5"/>
+            <where>libelle='Cordonnier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="5"/>
+            <where>libelle='Maroquinier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="5"/>
+            <where>libelle='Sellier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="5"/>
+            <where>libelle='Relieur'</where>
+        </update>
+
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Filateur'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Stoppeur'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Modéliste-styliste'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’objets et accessoires en tissu'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Sérigraphe sur tissu'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’articles à mailles et d’autres textiles'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de vêtements'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’accessoires en cuir'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’articles de fourrure'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de tentes'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de voiles'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de filets de pêche'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Taxidermiste'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Bottier'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Gainier'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Cireur de chaussures'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Graveur sur cuir'/>
+            <column name='branche_activite_id' value='5'/>
+            <column name='version' value='0'/>
+        </insert>
+
+
+        <!-- B R A N C H E -->
+        <insert tableName='branche_activite'>
+            <column name='libelle' value='Audiovisuel et communication'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="6"/>
+            <where>libelle='Photographe'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="6"/>
+            <where>libelle='Graveur'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="6"/>
+            <where>libelle='Imprimeur'</where>
+        </update>
+
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Cameraman'/>
+            <column name='branche_activite_id' value='6'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Maquettiste'/>
+            <column name='branche_activite_id' value='6'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Encadreur et assimilés'/>
+            <column name='branche_activite_id' value='6'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Installateur/réparateur de matériel audiovisuel'/>
+            <column name='branche_activite_id' value='6'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Installateur/réparateur photographique'/>
+            <column name='branche_activite_id' value='6'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Installateur/réparateur cinématographique'/>
+            <column name='branche_activite_id' value='6'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Installateur/réparateur de télécommunication et assimilés'/>
+            <column name='branche_activite_id' value='6'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Électricien cinéma'/>
+            <column name='branche_activite_id' value='6'/>
+            <column name='version' value='0'/>
+        </insert>
+
+
+
+        <!-- B R A N C H E -->
+        <insert tableName='branche_activite'>
+            <column name='libelle' value='Hygiène et soins corporels'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="7"/>
+            <where>libelle='Coiffeur'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="7"/>
+            <where>libelle='Coiffeuse'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="7"/>
+            <where>libelle='Esthéticien'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="7"/>
+            <where>libelle='Esthéticienne'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="7"/>
+            <where>libelle='Blanchisseur'</where>
+        </update>
+        <update tableName="metier">
+            <column name="libelle" value="Spécialiste en pressing"/>
+            <column name="branche_activite_id" value="7"/>
+            <where>libelle='Pressing'</where>
+        </update>
+        <update tableName="metier">
+            <column name="libelle" value="Laveur de voitures"/>
+            <column name="branche_activite_id" value="7"/>
+            <where>libelle='Lavage auto'</where>
+        </update>
+
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Tresseuse'/>
+            <column name='branche_activite_id' value='7'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de savons'/>
+            <column name='branche_activite_id' value='7'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de parfums'/>
+            <column name='branche_activite_id' value='7'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de produits chimiques'/>
+            <column name='branche_activite_id' value='7'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de cosmétiques et assimilés'/>
+            <column name='branche_activite_id' value='7'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Spécialiste en soins de beauté'/>
+            <column name='branche_activite_id' value='7'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Préparateur de pharmacopée traditionnelle'/>
+            <column name='branche_activite_id' value='7'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de prothèses et matériels orthopédiques'/>
+            <column name='branche_activite_id' value='7'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Lavandier'/>
+            <column name='branche_activite_id' value='7'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Spécialiste en nettoyage courant de locaux et autres services de nettoyage'/>
+            <column name='branche_activite_id' value='7'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Spécialiste en traitement et élimination des déchets'/>
+            <column name='branche_activite_id' value='7'/>
+            <column name='version' value='0'/>
+        </insert>
+
+
+
+        <!-- B R A N C H E -->
+        <insert tableName='branche_activite'>
+            <column name='libelle' value='Artisanat d’art et décoration'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <update tableName="metier">
+            <column name="branche_activite_id" value="8"/>
+            <where>libelle='Bijoutier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="libelle" value="Joaillier"/>
+            <column name="branche_activite_id" value="8"/>
+            <where>libelle='Bijoutier-joaillier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="8"/>
+            <where>libelle='Orfèvre'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="8"/>
+            <where>libelle='Ferronnier d’art'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="8"/>
+            <where>libelle='Fabricant de jouets'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="8"/>
+            <where>libelle='Potier'</where>
+        </update>
+        <update tableName="metier">
+            <column name="branche_activite_id" value="8"/>
+            <where>libelle='Céramiste'</where>
+        </update>
+        <update tableName="metier">
+            <column name="libelle" value="Verrier et autres objets d’art"/>
+            <column name="branche_activite_id" value="8"/>
+            <where>libelle='Verrier'</where>
+        </update>
+
+
+        <insert tableName='METIER'>
+            <column name='libelle' value='Bronzier'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Armurier'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Perlier'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Sculpteur et décorateur sur tous matériaux'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant de jeux'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’instruments de musique'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Spécialiste en taille, façonnage et finition d’objets d’art'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant en art graphique'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant en art floral'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Fabricant d’objets de décoration d’intérieur'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Jardinier'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Créateur d’espaces verts'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Paysagiste'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='METIER'>
+            <column name='libelle' value='Aménagiste'/>
+            <column name='branche_activite_id' value='8'/>
+            <column name='version' value='0'/>
+        </insert>
+
+        <!-- pays -->
+        <insert tableName='pays'>
+            <column name='libelle' value="EGYPTE"/>
+            <column name='code' value="EGY"/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='pays'>
+            <column name='libelle' value="TURQUIE"/>
+            <column name='code' value="TUR"/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='pays'>
+            <column name='libelle' value="FRANCE"/>
+            <column name='code' value="FRA"/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='pays'>
+            <column name='libelle' value="CHINE"/>
+            <column name='code' value="CHI"/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='pays'>
+            <column name='libelle' value="GABON"/>
+            <column name='code' value="GAB"/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='pays'>
+            <column name='libelle' value="REPUBLIQUE CENTRAFRICAINE"/>
+            <column name='code' value="RCA"/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='pays'>
+            <column name='libelle' value="CONGO (RDC)"/>
+            <column name='code' value="COD"/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='pays'>
+            <column name='libelle' value="CONGO-BRAZZAVILLE"/>
+            <column name='code' value="COG"/>
+            <column name='version' value='0'/>
+        </insert>
+        <insert tableName='pays'>
+            <column name='libelle' value="TUNISIE"/>
+            <column name='code' value="TUN"/>
+            <column name='version' value='0'/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,8 +1,6 @@
 package com.cnmci.core.model;
 
-import jakarta.persistence.Cacheable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -43,4 +41,9 @@ public class Metier extends AbstractEntity{
 
     @OneToMany(fetch = LAZY, mappedBy = "metier", orphanRemoval = true)
     private Collection<Compagnon> compagnons;
+
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "branche_activite_id", nullable = true ,
+            foreignKey = @ForeignKey(name = "FK_branche_activite_metier"))
+    private BrancheActivite brancheActivite;
 }

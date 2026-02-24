@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1771865168067-1">
+        <createSequence incrementBy="50" sequenceName="branche_activite_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1771865168067-2">
+        <createTable tableName="branche_activite">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="branche_activitePK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="libelle" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1771865168067-3">
+        <addColumn tableName="metier">
+            <column name="branche_activite_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1771865168067-4">
+        <addForeignKeyConstraint baseColumnNames="branche_activite_id" baseTableName="metier" constraintName="FK_branche_activite_metier" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="branche_activite" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
