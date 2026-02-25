@@ -33,6 +33,7 @@ public class Apprenti extends AbstractEntity{
 
     private UUID numeroIdentification;
     private String numeroImmatriculation;
+    private String numeroImmatriculationOld;
     private String lieuNaissanceAutre;
     private String civilite;
     private String nom;
@@ -109,6 +110,7 @@ public class Apprenti extends AbstractEntity{
     private String photoApprenti;
     private String photoCniRecto;
     private String photoCniVerso;
+    private String photoAutre;
 
     private int statutKyc;
     private int statutPaiement;
@@ -123,6 +125,10 @@ public class Apprenti extends AbstractEntity{
     private String diplomeObtenuMetier;
     private String cnps;
     private String cmu;
+
+    private boolean optinMail;
+    private boolean optinSms;
+    private boolean optinWhatsapp;
 
     @OneToMany(fetch = LAZY, mappedBy = "apprenti", orphanRemoval = true)
     private Collection<ArtisanApprenti> artisanApprentis;

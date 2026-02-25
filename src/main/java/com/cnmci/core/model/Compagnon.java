@@ -31,6 +31,7 @@ public class Compagnon extends AbstractEntity{
 
     private UUID numeroIdentification;
     private String numeroImmatriculation;
+    private String numeroImmatriculationOld;
     private String lieuNaissanceAutre;
     private String civilite;
     private String nom;
@@ -106,6 +107,7 @@ public class Compagnon extends AbstractEntity{
     private String photoCniRecto;
     private String photoCniVerso;
     private String photoDiplome;
+    private String photoAutre;
 
     private boolean declarationMaitriseMetier;
     private boolean declarationCondamnation;
@@ -116,6 +118,10 @@ public class Compagnon extends AbstractEntity{
     private Double longitude;
     private Double latitude;
     private int print;
+
+    private boolean optinMail;
+    private boolean optinSms;
+    private boolean optinWhatsapp;
 
     @OneToMany(fetch = LAZY, mappedBy = "compagnon", orphanRemoval = true)
     private Collection<ArtisanCompagnon> artisanCompagnons;

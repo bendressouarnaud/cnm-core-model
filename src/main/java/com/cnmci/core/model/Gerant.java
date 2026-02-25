@@ -74,6 +74,10 @@ public class Gerant extends AbstractEntity{
     @Column(length = 50)
     private String pieceIdentiteVerso;
 
+    private boolean optinMail;
+    private boolean optinSms;
+    private boolean optinWhatsapp;
+
     @OneToMany(fetch = LAZY, mappedBy = "gerant", orphanRemoval = true)
     private Collection<Entreprise> entreprises;
 

@@ -24,8 +24,8 @@ public class Metier extends AbstractEntity{
     @OneToMany(fetch = LAZY, mappedBy = "metierPrincipale", orphanRemoval = true)
     private Collection<Activite> activitesPrincipale;
 
-    @OneToMany(fetch = LAZY, mappedBy = "metierSecondaire", orphanRemoval = true)
-    private Collection<Activite> activitesSecondaire;
+    /*@OneToMany(fetch = LAZY, mappedBy = "metierSecondaire", orphanRemoval = true)
+    private Collection<Activite> activitesSecondaire;*/
 
     @OneToMany(fetch = LAZY, mappedBy = "activitePrincipale", orphanRemoval = true)
     private Collection<Entreprise> entreprisesPrincipales;

@@ -39,6 +39,7 @@ public class Artisan extends AbstractEntity{
 
     private UUID numeroIdentification;
     private String numeroRegistre;
+    private String numeroRegistreOld;
     private String lieuNaissanceAutre;
     private String civilite;
     private String nom;
@@ -121,6 +122,7 @@ public class Artisan extends AbstractEntity{
     private String photoCniRecto;
     private String photoCniVerso;
     private String photoDiplome;
+    private String photoAutre;
     private boolean declarationMaitriseMetier;
     private boolean declarationCondamnation;
 
@@ -147,6 +149,10 @@ public class Artisan extends AbstractEntity{
 
     private String codeActivation;
     private boolean livraisonCarte;
+
+    private boolean optinMail;
+    private boolean optinSms;
+    private boolean optinWhatsapp;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "compte_bancaire_id", nullable = true ,
