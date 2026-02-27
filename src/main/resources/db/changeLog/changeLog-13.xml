@@ -1,0 +1,96 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1772181659895-15">
+        <dropForeignKeyConstraint baseTableName="activite" constraintName="FK_activite_principale"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-1">
+        <createSequence incrementBy="50" sequenceName="paiement_livraison_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-2">
+        <createSequence incrementBy="50" sequenceName="payment_livraison_request_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-3">
+        <createTable tableName="paiement_livraison">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="paiement_livraisonPK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="montant" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="apprenti_id" type="BIGINT"/>
+            <column name="artisan_id" type="BIGINT"/>
+            <column name="compagnon_id" type="BIGINT"/>
+            <column name="entreprise_id" type="BIGINT"/>
+            <column name="utilisateur_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-4">
+        <createTable tableName="payment_livraison_request">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="payment_livraison_requestPK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="etat" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="launch_url" type="VARCHAR(255)"/>
+            <column name="requester_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="requester_type" type="VARCHAR(255)"/>
+            <column name="wave_id" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-5">
+        <createIndex indexName="apprenti_livraison_id_idx" tableName="paiement_livraison">
+            <column name="apprenti_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-6">
+        <createIndex indexName="artisan_livraison_id_idx" tableName="paiement_livraison">
+            <column name="artisan_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-7">
+        <createIndex indexName="compagnon_livraison_id_idx" tableName="paiement_livraison">
+            <column name="compagnon_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-8">
+        <createIndex indexName="entreprise_livraison_id_idx" tableName="paiement_livraison">
+            <column name="entreprise_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-9">
+        <createIndex indexName="utilisateur_livraison_id_idx" tableName="paiement_livraison">
+            <column name="utilisateur_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-10">
+        <addForeignKeyConstraint baseColumnNames="apprenti_id" baseTableName="paiement_livraison" constraintName="FK_apprenti_paiement_enrolement" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="apprenti" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-11">
+        <addForeignKeyConstraint baseColumnNames="artisan_id" baseTableName="paiement_livraison" constraintName="FK_artisan_paiement_enrolement" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="artisan" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-12">
+        <addForeignKeyConstraint baseColumnNames="compagnon_id" baseTableName="paiement_livraison" constraintName="FK_compagnon_paiement_enrolement" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="compagnon" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-13">
+        <addForeignKeyConstraint baseColumnNames="entreprise_id" baseTableName="paiement_livraison" constraintName="FK_entreprise_paiement_enrolement" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="entreprise" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-14">
+        <addForeignKeyConstraint baseColumnNames="utilisateur_id" baseTableName="paiement_livraison" constraintName="FK_utilisateur_paiement_enrolement" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="utilisateur" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1772181659895-16">
+        <dropColumn columnName="metier_principale_id" tableName="activite"/>
+    </changeSet>
+</databaseChangeLog>

@@ -21,8 +21,8 @@ import static jakarta.persistence.FetchType.LAZY;
 public class Metier extends AbstractEntity{
     private String libelle;
 
-    @OneToMany(fetch = LAZY, mappedBy = "metierPrincipale", orphanRemoval = true)
-    private Collection<Activite> activitesPrincipale;
+    /*@OneToMany(fetch = LAZY, mappedBy = "metierPrincipale", orphanRemoval = true)
+    private Collection<Activite> activitesPrincipale;*/
 
     /*@OneToMany(fetch = LAZY, mappedBy = "metierSecondaire", orphanRemoval = true)
     private Collection<Activite> activitesSecondaire;*/

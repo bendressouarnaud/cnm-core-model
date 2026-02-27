@@ -17,8 +17,8 @@ import static jakarta.persistence.FetchType.LAZY;
 @NoArgsConstructor
 @Table(
         indexes = {
-                @Index(name = "metier_principale_activite_id_idx", columnList = "metier_principale_id"),
-                /*@Index(name = "metier_secondaire_activite_id_idx", columnList = "metier_secondaire_id"),*/
+                /*@Index(name = "metier_principale_activite_id_idx", columnList = "metier_principale_id"),
+                @Index(name = "metier_secondaire_activite_id_idx", columnList = "metier_secondaire_id"),*/
                 @Index(name = "quartier_activite_id_idx", columnList = "quartier_siege_id")
         }
 )
@@ -29,10 +29,10 @@ public class Activite extends AbstractEntity{
             foreignKey = @ForeignKey(name = "FK_commune_activite"))
     private Commune commune;
 
-    @ManyToOne(fetch = LAZY)
+    /*@ManyToOne(fetch = LAZY)
     @JoinColumn(name = "metier_principale_id", nullable = true ,
             foreignKey = @ForeignKey(name = "FK_activite_principale"))
-    private Metier metierPrincipale;
+    private Metier metierPrincipale;*/
 
     /*@ManyToOne(fetch = LAZY)
     @JoinColumn(name = "metier_secondaire_id", nullable = true ,
