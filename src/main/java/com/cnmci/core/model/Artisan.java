@@ -154,6 +154,11 @@ public class Artisan extends AbstractEntity{
     private boolean optinSms;
     private boolean optinWhatsapp;
 
+    // 28-02-2026
+    private int regimeFiscal;
+    @Column(length = 100)
+    private String qualification;
+
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "compte_bancaire_id", nullable = true ,
             foreignKey = @ForeignKey(name = "FK_compte_bancaire_artisan"))
