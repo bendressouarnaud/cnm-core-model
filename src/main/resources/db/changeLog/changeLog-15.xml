@@ -1,0 +1,51 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1772869687621-1">
+        <addColumn tableName="apprenti">
+            <column name="statut_livraison" type="integer">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <update tableName="apprenti">
+            <column name="statut_livraison" value="0"/>
+        </update>
+
+        <addColumn tableName="artisan">
+            <column name="statut_livraison" type="integer">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <update tableName="artisan">
+            <column name="statut_livraison" value="0"/>
+        </update>
+
+        <addColumn tableName="compagnon">
+            <column name="statut_livraison" type="integer">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <update tableName="compagnon">
+            <column name="statut_livraison" value="0"/>
+        </update>
+
+        <insert tableName="PROFIL">
+            <column  name="libelle"  value="Président CRM"/>
+            <column  name="description"  value="Président CRM"/>
+            <column  name="code"  value="ROLE_PRESIDENT_CRM"/>
+            <column  name="version"  value="0"/>
+            <column  name="actif"  value="1"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="PROFIL">
+            <column  name="libelle"  value="Imprimeur Carte"/>
+            <column  name="description"  value="Tire ou imprime les carte"/>
+            <column  name="code"  value="ROLE_IMPRIMEUR_CARTE"/>
+            <column  name="version"  value="0"/>
+            <column  name="actif"  value="1"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

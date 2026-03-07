@@ -149,6 +149,7 @@ public class Artisan extends AbstractEntity{
 
     private String codeActivation;
     private boolean livraisonCarte;
+    private int statutLivraison;
 
     private boolean optinMail;
     private boolean optinSms;
