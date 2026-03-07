@@ -23,4 +23,5 @@ public class PaymentRequest extends AbstractEntity {
     private String launchUrl;
     @Enumerated(EnumType.ORDINAL)
     private CategorieEnrolement categorieEnrolement;
+    private int paymentType; // 0 : Frais d'enrôlement, 1 : Frais de livraison
 }
