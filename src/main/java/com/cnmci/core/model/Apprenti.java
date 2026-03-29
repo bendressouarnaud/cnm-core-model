@@ -131,6 +131,10 @@ public class Apprenti extends AbstractEntity{
     private boolean optinSms;
     private boolean optinWhatsapp;
 
+    // 29-03-2026
+    private int rappelSms;
+    private int printCarte;
+
     @OneToMany(fetch = LAZY, mappedBy = "apprenti", orphanRemoval = true)
     private Collection<ArtisanApprenti> artisanApprentis;
 

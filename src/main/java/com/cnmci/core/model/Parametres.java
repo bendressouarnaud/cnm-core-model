@@ -17,6 +17,6 @@ public class Parametres {
 
     //@Column(name = "byte_array")
     private byte[] byteArray;
-
     private boolean envoiMail;
+    private boolean envoiSms;
 }

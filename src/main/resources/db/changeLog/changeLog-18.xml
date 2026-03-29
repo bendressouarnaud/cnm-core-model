@@ -1,0 +1,59 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1774814675808-1">
+        <addColumn tableName="parametres">
+            <column name="envoi_sms" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <update tableName="parametres">
+            <column name="envoi_sms" value="true"/>
+            <column name="envoi_mail" value="true"/>
+        </update>
+
+        <addColumn tableName="apprenti">
+            <column name="print_carte" type="integer">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="apprenti">
+            <column name="rappel_sms" type="integer">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <update tableName="apprenti">
+            <column name="print_carte" value="0"/>
+            <column name="rappel_sms" value="0"/>
+        </update>
+
+        <addColumn tableName="artisan">
+            <column name="print_carte" type="integer">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="artisan">
+            <column name="rappel_sms" type="integer">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <update tableName="artisan">
+            <column name="print_carte" value="0"/>
+            <column name="rappel_sms" value="0"/>
+        </update>
+
+        <addColumn tableName="compagnon">
+            <column name="print_carte" type="integer">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="compagnon">
+            <column name="rappel_sms" type="integer">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <update tableName="compagnon">
+            <column name="print_carte" value="0"/>
+            <column name="rappel_sms" value="0"/>
+        </update>
+    </changeSet>
+</databaseChangeLog>

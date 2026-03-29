@@ -160,6 +160,11 @@ public class Artisan extends AbstractEntity{
     @Column(length = 100)
     private String qualification;
 
+    // 29-03-2026
+    private int rappelSms;
+    private int printCarte;
+
+
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "compte_bancaire_id", nullable = true ,
             foreignKey = @ForeignKey(name = "FK_compte_bancaire_artisan"))

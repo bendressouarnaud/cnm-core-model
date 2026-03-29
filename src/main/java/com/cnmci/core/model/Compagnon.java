@@ -124,6 +124,10 @@ public class Compagnon extends AbstractEntity{
     private boolean optinSms;
     private boolean optinWhatsapp;
 
+    // 29-03-2026
+    private int rappelSms;
+    private int printCarte;
+
     @OneToMany(fetch = LAZY, mappedBy = "compagnon", orphanRemoval = true)
     private Collection<ArtisanCompagnon> artisanCompagnons;
 
