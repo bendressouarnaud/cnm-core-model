@@ -63,11 +63,19 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+tasks.named("bootWar") {
+	launchScript{
+		enabled = true
+	}
+	enabled = true
+	archiveFileName = "core-model.${archiveExtension.get()}"
+}
+
 // Liquibase
 liquibase {
 	activities {
 		postgres {
-			changelogFile       'src/main/resources/db/changeLog/changeLog-3.xml'
+			changelogFile       'src/main/resources/db/changeLog/changeLog-19.xml'
 			overwriteOutputFile true
 			referenceUrl(       'hibernate:spring:com.cnmci.core.model?'
 					+ 'dialect=org.hibernate.dialect.PostgreSQLDialect'
