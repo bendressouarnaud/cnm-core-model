@@ -163,6 +163,7 @@ public class Artisan extends AbstractEntity{
     // 29-03-2026
     private int rappelSms;
     private int printCarte;
+    private String signature;
 
 
     @ManyToOne(fetch = LAZY)

@@ -134,6 +134,7 @@ public class Apprenti extends AbstractEntity{
     // 29-03-2026
     private int rappelSms;
     private int printCarte;
+    private String signature;
 
     @OneToMany(fetch = LAZY, mappedBy = "apprenti", orphanRemoval = true)
     private Collection<ArtisanApprenti> artisanApprentis;
