@@ -77,6 +77,7 @@ public class Gerant extends AbstractEntity{
     private boolean optinMail;
     private boolean optinSms;
     private boolean optinWhatsapp;
+    private String signature;
 
     @OneToMany(fetch = LAZY, mappedBy = "gerant", orphanRemoval = true)
     private Collection<Entreprise> entreprises;
