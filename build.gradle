@@ -68,7 +68,7 @@ tasks.named("bootWar") {
 		enabled = true
 	}
 	enabled = true
-	archiveFileName = "core-model.${archiveExtension.get()}"
+	archiveFileName = "cnm-core-model.${archiveExtension.get()}"
 }
 
 // Liquibase
