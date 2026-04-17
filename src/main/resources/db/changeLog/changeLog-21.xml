@@ -1,0 +1,32 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1776411817696-1">
+        <addColumn tableName="gerant">
+            <column name="qualification" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <update tableName="gerant">
+            <column name="qualification" value=""/>
+        </update>
+
+
+        <!-- ADD USER -->
+        <insert tableName="UTILISATEUR">
+            <column  name="nom"  value="TEST"/>
+            <column  name="prenom"  value="1"/>
+            <column  name="contact"  value="0600010203"/>
+            <column  name="email"  value="test1@gmail.com"/>
+            <column  name="pwd"  value="1990"/>
+            <column  name="code"  value="CNMCI-T1-SA-2025-00000001"/>
+            <column  name="actif"  value="1"/>
+            <column  name="crm_id"  value="1"/>
+            <column  name="profil_id"  value="1"/>
+            <column  name="partenaire_id"  value="1"/>
+            <column  name="fcm"  value=""/>
+            <column  name="version"  value="0"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
