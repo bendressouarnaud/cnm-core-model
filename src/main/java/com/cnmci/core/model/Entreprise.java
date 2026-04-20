@@ -71,6 +71,7 @@ public class Entreprise extends AbstractEntity{
     private String registreCommerce;
     @Column(length = 50)
     private String dfe;
+    private String activiteSecondaireLibelle;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "utilisateur_id", nullable = true ,foreignKey = @ForeignKey(name = "FK_utilisateur_entreprise"))
