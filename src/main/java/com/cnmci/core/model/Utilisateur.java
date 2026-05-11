@@ -59,4 +59,7 @@ public class Utilisateur extends AbstractEntity{
 
     @OneToMany(fetch = LAZY, mappedBy = "utilisateur", orphanRemoval = true)
     private Collection<PaiementEnrolement> paiementEnrolements;
+
+    @OneToMany(fetch = LAZY, mappedBy = "utilisateur", orphanRemoval = true)
+    private Collection<NotificationControle> notificationControles;
 }
