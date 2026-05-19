@@ -1,0 +1,79 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1779206983420-1">
+        <createSequence incrementBy="50" sequenceName="facture_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-2">
+        <createTable tableName="facture">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="facturePK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="utilisateur_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-3">
+        <addColumn tableName="frais_dossier">
+            <column name="facture_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-4">
+        <addColumn tableName="frais_transaction">
+            <column name="facture_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-5">
+        <addColumn tableName="gain_enrolement">
+            <column name="facture_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-6">
+        <addColumn tableName="paiement_enrolement">
+            <column name="facture_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-7">
+        <createIndex indexName="facture_fraisdossier_id_idx" tableName="frais_dossier">
+            <column name="facture_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-8">
+        <createIndex indexName="facture_fraistransaction_id_idx" tableName="frais_transaction">
+            <column name="facture_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-9">
+        <createIndex indexName="facture_gain_id_idx" tableName="gain_enrolement">
+            <column name="facture_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-10">
+        <createIndex indexName="facture_paiement_enrolement_id_idx" tableName="paiement_enrolement">
+            <column name="facture_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-11">
+        <createIndex indexName="utilisateur_facture_id_idx" tableName="facture">
+            <column name="utilisateur_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-12">
+        <addForeignKeyConstraint baseColumnNames="facture_id" baseTableName="frais_dossier" constraintName="FK_facture_fraisdossier" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="facture" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-13">
+        <addForeignKeyConstraint baseColumnNames="facture_id" baseTableName="frais_transaction" constraintName="FK_facture_fraistransaction" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="facture" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-14">
+        <addForeignKeyConstraint baseColumnNames="facture_id" baseTableName="gain_enrolement" constraintName="FK_facture_gain" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="facture" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-15">
+        <addForeignKeyConstraint baseColumnNames="facture_id" baseTableName="paiement_enrolement" constraintName="FK_facture_paiement_enrol" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="facture" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779206983420-16">
+        <addForeignKeyConstraint baseColumnNames="utilisateur_id" baseTableName="facture" constraintName="FK_utilisateur_facture" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="utilisateur" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

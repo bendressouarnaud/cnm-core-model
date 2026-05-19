@@ -1,9 +1,6 @@
 package com.cnmci.core.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ForeignKey;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,6 +13,11 @@ import static jakarta.persistence.FetchType.LAZY;
 @SuperBuilder
 @Entity
 @NoArgsConstructor
+@Table(
+        indexes = {
+                @Index(name = "facture_fraistransaction_id_idx", columnList = "facture_id")
+        }
+)
 public class FraisTransaction extends AbstractEntity {
 
     // Use to TRACK PAYMENT record for SFP and DLEK :
@@ -25,5 +27,9 @@ public class FraisTransaction extends AbstractEntity {
     @JoinColumn(name = "partenaire_id", nullable = false,
             foreignKey = @ForeignKey(name = "FK_partenaire_frais_transaction"))
     private Partenaire partenaire;
+
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "facture_id", nullable = true, foreignKey = @ForeignKey(name = "FK_facture_fraistransaction"))
+    private Facture facture;
 
 }

@@ -1536,6 +1536,10 @@
     <include file="db/changeLog/changeLog-21.xml"/>
     <include file="db/changeLog/changeLog-22.xml"/>
     <include file="db/changeLog/changeLog-23.xml"/>
-    <include file="db/changeLog/changeLog-24.xml"/>
-    <include file="db/changeLog/changeLog-init-data-14.xml"/>
+    <!--<include file="db/changeLog/changeLog-24.xml"/>
+    <include file="db/changeLog/changeLog-init-data-14.xml"/>-->
+    <include file="db/changeLog/changeLog-init-data-141.xml"/>
+    <!-- INSERT une ligne manuellement dans CNPS -->
+    <include file="db/changeLog/changeLog-25.xml"/>
+    <include file="db/changeLog/changeLog-init-data-15.xml"/>
 </databaseChangeLog>

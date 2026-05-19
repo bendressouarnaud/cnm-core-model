@@ -1,0 +1,30 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet  author="ankk (manually)"  id="19052026-0748">
+
+        <insert tableName='facture'>
+            <column name='utilisateur_id' value='1'/>
+            <column name='version' value='0'/>
+            <column name="created_at" value="2026-05-14 23:41:28.442919"/>
+            <column name="updated_at" value="2026-05-14 23:41:28.442919"/>
+        </insert>
+
+        <update tableName="frais_dossier">
+            <column name="facture_id" value="1"/>
+            <where>date(created_at)&lt;='2026-05-14'</where>
+        </update>
+        <update tableName="frais_transaction">
+            <column name="facture_id" value="1"/>
+            <where>date(created_at)&lt;='2026-05-14'</where>
+        </update>
+        <update tableName="gain_enrolement">
+            <column name="facture_id" value="1"/>
+            <where>id &lt;= 17017</where>
+        </update>
+        <update tableName="paiement_enrolement">
+            <column name="facture_id" value="1"/>
+            <where>id &lt;= 4514</where>
+        </update>
+
+    </changeSet>
+</databaseChangeLog>
