@@ -1,0 +1,54 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1779340936090-1">
+        <createSequence incrementBy="50" sequenceName="action_terrain_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779340936090-2">
+        <createTable tableName="action_terrain">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="action_terrainPK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="actif" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="commune_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quartier_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="utilisateur_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779340936090-3">
+        <createIndex indexName="commune_action_terrain_id_idx" tableName="action_terrain">
+            <column name="commune_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779340936090-4">
+        <createIndex indexName="quartier_action_terrain_id_idx" tableName="action_terrain">
+            <column name="quartier_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779340936090-5">
+        <createIndex indexName="utilisateur_action_terrain_id_idx" tableName="action_terrain">
+            <column name="utilisateur_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779340936090-6">
+        <addForeignKeyConstraint baseColumnNames="commune_id" baseTableName="action_terrain" constraintName="FK_commune_action_terrain" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="commune" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779340936090-7">
+        <addForeignKeyConstraint baseColumnNames="quartier_id" baseTableName="action_terrain" constraintName="FK_quartier_action_terrain" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="quartier" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1779340936090-8">
+        <addForeignKeyConstraint baseColumnNames="utilisateur_id" baseTableName="action_terrain" constraintName="FK_utilisateur_action_terrain" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="utilisateur" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

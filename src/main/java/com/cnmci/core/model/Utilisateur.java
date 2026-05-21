@@ -62,4 +62,7 @@ public class Utilisateur extends AbstractEntity{
 
     @OneToMany(fetch = LAZY, mappedBy = "utilisateur", orphanRemoval = true)
     private Collection<NotificationControle> notificationControles;
+
+    @OneToMany(fetch = LAZY, mappedBy = "utilisateur", orphanRemoval = true)
+    private Collection<ActionTerrain> actionTerrains;
 }
