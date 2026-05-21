@@ -23,6 +23,7 @@ import static jakarta.persistence.FetchType.LAZY;
 public class ActionTerrain extends AbstractEntity {
 
     private boolean actif;
+    private boolean sent;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "utilisateur_id", nullable = false,

@@ -1542,4 +1542,5 @@
     <!-- INSERT une ligne manuellement dans CNPS -->
     <include file="db/changeLog/changeLog-25.xml"/>
     <include file="db/changeLog/changeLog-init-data-15.xml"/>
+    <include file="db/changeLog/changeLog-26.xml"/>
 </databaseChangeLog>
