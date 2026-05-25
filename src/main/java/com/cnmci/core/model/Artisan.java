@@ -172,7 +172,8 @@ public class Artisan extends AbstractEntity{
     private String signature;
 
     private boolean suiviCallCenter;
-
+    private OffsetDateTime suiviCallCenterDate;
+    private OffsetDateTime datePrevisionellePaiement;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "compte_bancaire_id", nullable = true ,
