@@ -26,6 +26,7 @@ import static jakarta.persistence.FetchType.LAZY;
                 @Index(name = "commune_naissance_artisan_id_idx", columnList = "commune_naissance_id"),
 
                 @Index(name = "utilisateur_artisan_id_idx", columnList = "utilisateur_id"),
+                @Index(name = "utilisateur_call_center_id_idx", columnList = "utilisateur_call_center_id"),
                 @Index(name = "metier_artisan_id_idx", columnList = "metier_id"),
 
                 @Index(name = "crm_artisan_id_idx", columnList = "crm_id"),
@@ -99,6 +100,11 @@ public class Artisan extends AbstractEntity{
     @JoinColumn(name = "utilisateur_id", nullable = true, foreignKey = @ForeignKey(name = "FK_utilisateur_artisan"))
     private Utilisateur utilisateur;
 
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "utilisateur_call_center_id", nullable = true,
+            foreignKey = @ForeignKey(name = "FK_utilisateur_call_center_artisan"))
+    private Utilisateur utilisateurCallCenter;
+
     @Enumerated(EnumType.ORDINAL)
     private StatutType statutType;
 
@@ -165,6 +171,8 @@ public class Artisan extends AbstractEntity{
     private int printCarte;
     private String signature;
 
+    private boolean suiviCallCenter;
+
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "compte_bancaire_id", nullable = true ,
@@ -211,5 +219,4 @@ public class Artisan extends AbstractEntity{
 
     @OneToMany(fetch = LAZY, mappedBy = "artisan", orphanRemoval = true)
     private Collection<CommentaireEnrolement> commentaireEnrolements;
-
 }
