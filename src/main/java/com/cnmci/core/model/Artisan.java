@@ -232,4 +232,5 @@ public class Artisan extends AbstractEntity{
     private CanalPrefereType canalPrefereType;
 
     private String noteSuiviCallCenter;
+    private OffsetDateTime datePaiementRdv;
 }
