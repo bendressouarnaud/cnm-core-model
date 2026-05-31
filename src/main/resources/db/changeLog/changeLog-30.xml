@@ -1,0 +1,28 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1780247722627-1">
+        <addColumn tableName="artisan">
+            <column name="canal_prefere_type" type="smallint"/>
+        </addColumn>
+
+        <addColumn tableName="artisan">
+            <column name="contact_etabli_type" type="smallint"/>
+        </addColumn>
+
+        <addColumn tableName="artisan">
+            <column name="intention_paiement_type" type="smallint"/>
+        </addColumn>
+
+        <addColumn tableName="artisan">
+            <column name="note_suivi_call_center" type="varchar(255)"/>
+        </addColumn>
+
+        <update tableName="artisan">
+            <column name="canal_prefere_type" value="0"/>
+            <column name="contact_etabli_type" value="0"/>
+            <column name="intention_paiement_type" value="0"/>
+            <column name="note_suivi_call_center" value=""/>
+        </update>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,5 +1,8 @@
 package com.cnmci.core.model;
 
+import com.cnmci.core.enums.CanalPrefereType;
+import com.cnmci.core.enums.ContactEtabliType;
+import com.cnmci.core.enums.IntentionPaiementType;
 import com.cnmci.core.enums.StatutType;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -220,4 +223,13 @@ public class Artisan extends AbstractEntity{
 
     @OneToMany(fetch = LAZY, mappedBy = "artisan", orphanRemoval = true)
     private Collection<CommentaireEnrolement> commentaireEnrolements;
+
+    @Enumerated(EnumType.ORDINAL)
+    private ContactEtabliType contactEtabliType;
+    @Enumerated(EnumType.ORDINAL)
+    private IntentionPaiementType intentionPaiementType;
+    @Enumerated(EnumType.ORDINAL)
+    private CanalPrefereType canalPrefereType;
+
+    private String noteSuiviCallCenter;
 }
