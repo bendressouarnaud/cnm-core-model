@@ -239,4 +239,5 @@ public class Artisan extends AbstractEntity{
     @JoinColumn(name = "utilisateur_agent_assermente_id", nullable = true,
             foreignKey = @ForeignKey(name = "FK_utilisateur_agent_assermente_artisan"))
     private Utilisateur utilisateurAgentAssermente;
+    private OffsetDateTime dateAssignationAssermente;
 }
