@@ -36,7 +36,8 @@ import static jakarta.persistence.FetchType.LAZY;
                 @Index(name = "departement_artisan_id_idx", columnList = "departement_id"),
                 @Index(name = "sous_prefecture_artisan_id_idx", columnList = "sous_prefecture_id"),
 
-                @Index(name = "quartier_residence_id_idx", columnList = "quartier_residence_id")
+                @Index(name = "quartier_residence_id_idx", columnList = "quartier_residence_id"),
+                @Index(name = "user_assermente_artisan_id_idx", columnList = "utilisateur_agent_assermente_id"),
         }
 )
 public class Artisan extends AbstractEntity{
@@ -233,4 +234,9 @@ public class Artisan extends AbstractEntity{
 
     private String noteSuiviCallCenter;
     private OffsetDateTime datePaiementRdv;
+
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "utilisateur_agent_assermente_id", nullable = true,
+            foreignKey = @ForeignKey(name = "FK_utilisateur_agent_assermente_artisan"))
+    private Utilisateur utilisateurAgentAssermente;
 }

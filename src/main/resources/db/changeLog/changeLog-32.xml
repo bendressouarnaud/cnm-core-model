@@ -1,0 +1,33 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1780333390402-2">
+        <addColumn tableName="artisan">
+            <column name="utilisateur_agent_assermente_id" type="bigint">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1780333390402-3">
+        <createIndex indexName="user_assermente_artisan_id_idx" tableName="artisan">
+            <column name="utilisateur_agent_assermente_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1780333390402-4">
+        <addForeignKeyConstraint baseColumnNames="utilisateur_agent_assermente_id" baseTableName="artisan" constraintName="FK_utilisateur_agent_assermente_artisan" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="utilisateur" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1780333390402-5">
+        <dropTable tableName="artisan_entity"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1780333390402-6">
+        <dropColumn columnName="activite_principale" tableName="artisan"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1780333390402-7">
+        <dropColumn columnName="numero_id" tableName="artisan"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1780333390402-8">
+        <dropColumn columnName="photo" tableName="artisan"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1780333390402-1">
+        <modifyDataType columnName="qualification" newDataType="varchar(100)" tableName="artisan"/>
+    </changeSet>
+</databaseChangeLog>
