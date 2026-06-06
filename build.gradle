@@ -76,7 +76,7 @@ tasks.named("bootWar") {
 liquibase {
 	activities {
 		postgres {
-			changelogFile       'src/main/resources/db/changeLog/changeLog-33.xml'
+			changelogFile       'src/main/resources/db/changeLog/changeLog-34.xml'
 			overwriteOutputFile true
 			referenceUrl(       'hibernate:spring:com.cnmci.core.model?'
 					+ 'dialect=org.hibernate.dialect.PostgreSQLDialect'

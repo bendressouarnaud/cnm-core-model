@@ -24,4 +24,6 @@ public class Facture extends AbstractEntity{
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "utilisateur_id", nullable = true, foreignKey = @ForeignKey(name = "FK_utilisateur_facture"))
     private Utilisateur utilisateur;
+
+    private boolean paid;
 }
