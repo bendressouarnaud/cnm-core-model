@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1780756749915-1">
+        <addColumn tableName="facture">
+            <column name="partenaire_id" type="bigint">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1780756749915-2">
+        <createIndex indexName="partenaire_facture_id_idx" tableName="facture">
+            <column name="partenaire_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1780756749915-3">
+        <addForeignKeyConstraint baseColumnNames="partenaire_id" baseTableName="facture" constraintName="FK_partenaire_facture" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="partenaire" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

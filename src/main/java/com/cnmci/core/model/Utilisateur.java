@@ -31,11 +31,11 @@ public class Utilisateur extends AbstractEntity{
     @JoinColumn(name = "crm_id", nullable = true ,foreignKey = @ForeignKey(name = "FK_crm_utilisateur"))
     private Crm crm;
 
-    @ManyToOne(fetch = EAGER)
+    @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "profil_id", nullable = true ,foreignKey = @ForeignKey(name = "FK_profil_utilisateur"))
     private Profil profil;
 
-    @ManyToOne(fetch = EAGER)
+    @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "partenaire_id", nullable = true ,foreignKey = @ForeignKey(name = "FK_partenaire_utilisateur"))
     private Partenaire partenaire;
 
