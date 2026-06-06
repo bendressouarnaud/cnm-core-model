@@ -32,4 +32,5 @@ public class Facture extends AbstractEntity{
     private Partenaire partenaire;
 
     private boolean paid;
+    private String fichier;
 }
