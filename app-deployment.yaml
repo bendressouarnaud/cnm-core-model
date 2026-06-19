@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: core-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: core-deployment
+  template:
+    metadata:
+      labels:
+        app: core-deployment
+    spec:
+      containers:
+        - name: core
+          image: core-cnmci:1558
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8099
+          #env:
+          #  - name: SPRING_DATASOURCE_URL
+          #    value: jdbc:postgresql://postgres:5432/artisan
+          #  - name: SPRING_DATASOURCE_USERNAME
+          #    value: postgres
+          #  - name: SPRING_DATASOURCE_PASSWORD
+          #    value: marviniscool
