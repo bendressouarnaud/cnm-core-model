@@ -174,6 +174,7 @@ public class Artisan extends AbstractEntity{
     private int rappelSms;
     private int printCarte;
     private String signature;
+    private boolean synchronisation;
 
     private boolean suiviCallCenter;
     private OffsetDateTime suiviCallCenterDate;
