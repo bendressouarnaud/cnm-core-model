@@ -34,16 +34,16 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v7
       with:
         image: ngbandama/cnm-core
-        tags: 1.0.1
+        tags: 1.0.2
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    #- name: Deploy to VPS
-    #  uses: appleboy/ssh-action@v1.2.0
-    #  with:
-    #    host: ${{ secrets.VPS_IP }}
-    #    username: ${{ secrets.VPS_USER }}
-    #    key: ${{ secrets.SSH_PRIVATE }}
-    #    script: |
-    #      docker pull ngbandama/stats-back:1.0.4
-    #      docker service update --image ngbandama/stats-back:1.0.4 --force cnmci_stats
+    - name: Deploy to VPS
+      uses: appleboy/ssh-action@v1.2.0
+      with:
+        host: ${{ secrets.VPS_IP }}
+        username: ${{ secrets.VPS_USER }}
+        key: ${{ secrets.SSH_PRIVATE }}
+        script: |
+          docker pull ngbandama/cnm-core:1.0.2
+          docker service update --image ngbandama/cnm-core:1.0.2 --force cnmci_core
