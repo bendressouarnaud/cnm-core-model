@@ -1,0 +1,53 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1783151532124-1">
+        <createSequence incrementBy="50" sequenceName="payment_request_copie_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1783151532124-2">
+        <createTable tableName="payment_request_copie">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="payment_request_copiePK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="categorie_enrolement" type="SMALLINT"/>
+            <column name="etat" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="launch_url" type="VARCHAR(255)"/>
+            <column name="montant" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="payment_type" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="requester_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="requester_type" type="VARCHAR(255)"/>
+            <column name="wave_id" type="VARCHAR(255)"/>
+            <column name="utilisateur_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1783151532124-3">
+        <createIndex indexName="utilisateur_payment_cp_id_idx" tableName="payment_request_copie">
+            <column name="utilisateur_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1783151532124-4">
+        <addForeignKeyConstraint baseColumnNames="utilisateur_id" baseTableName="payment_request_copie" constraintName="FK_utilisateur_payment_request_cp" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="utilisateur" validate="true"/>
+    </changeSet>
+
+    <!--    -->
+    <changeSet  author="ankk (manually)"  id="04072026-0953">
+        <insert tableName="METIER">
+            <column  name="libelle"  value="MECANIQUE INDUSTRIELLE"/>
+            <column  name="version"  value="0"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
