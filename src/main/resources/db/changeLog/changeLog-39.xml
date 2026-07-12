@@ -1,0 +1,34 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1783890195429-1">
+        <addColumn tableName="entreprise">
+            <column name="livraison_document" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <addColumn tableName="entreprise">
+            <column name="statut_livraison" type="integer">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <!-- UPDATE on entreprise  -->
+        <update tableName="entreprise">
+            <column name="livraison_document" value="false"/>
+            <column name="statut_livraison" value="0"/>
+        </update>
+
+        <!-- NEW PROFILE  -->
+        <insert tableName="PROFIL">
+            <column  name="libelle"  value="Responsable des Agents assermentés"/>
+            <column  name="description"  value="Gestion de l'équipe des agents assermentés"/>
+            <column  name="code"  value="ROLE_RESPONSABLE_AGENT_ASSERMENTE"/>
+            <column  name="version"  value="0"/>
+            <column  name="actif"  value="1"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
