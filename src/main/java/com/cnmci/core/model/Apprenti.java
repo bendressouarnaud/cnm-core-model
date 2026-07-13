@@ -47,6 +47,8 @@ public class Apprenti extends AbstractEntity{
     private String codeActivation;
     private boolean livraisonCarte;
     private int statutLivraison;
+    private boolean confirmationLivraison;
+    private String photoSignatureLivraison;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "commune_naissance_id", nullable = true ,

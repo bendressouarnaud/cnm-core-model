@@ -75,6 +75,8 @@ public class Entreprise extends AbstractEntity{
 
     private boolean livraisonDocument;
     private int statutLivraison;
+    private boolean confirmationLivraison;
+    private String photoSignatureLivraison;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "utilisateur_id", nullable = true ,foreignKey = @ForeignKey(name = "FK_utilisateur_entreprise"))

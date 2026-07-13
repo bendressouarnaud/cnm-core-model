@@ -1,0 +1,61 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1783979483061-1">
+        <!-- APPRENTI -->
+        <addColumn tableName="apprenti">
+            <column name="confirmation_livraison" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="apprenti">
+            <column name="photo_signature_livraison" type="varchar(255)"/>
+        </addColumn>
+        <update tableName="apprenti">
+            <column name="confirmation_livraison" value="false"/>
+            <column name="photo_signature_livraison" value=""/>
+        </update>
+
+        <!-- ARTISAN -->
+        <addColumn tableName="artisan">
+            <column name="confirmation_livraison" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="artisan">
+            <column name="photo_signature_livraison" type="varchar(255)"/>
+        </addColumn>
+        <update tableName="artisan">
+            <column name="confirmation_livraison" value="false"/>
+            <column name="photo_signature_livraison" value=""/>
+        </update>
+
+        <!-- COMPAGNON -->
+        <addColumn tableName="compagnon">
+            <column name="confirmation_livraison" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="compagnon">
+            <column name="photo_signature_livraison" type="varchar(255)"/>
+        </addColumn>
+        <update tableName="compagnon">
+            <column name="confirmation_livraison" value="false"/>
+            <column name="photo_signature_livraison" value=""/>
+        </update>
+
+        <!-- ENTREPRISE -->
+        <addColumn tableName="entreprise">
+            <column name="confirmation_livraison" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="entreprise">
+            <column name="photo_signature_livraison" type="varchar(255)"/>
+        </addColumn>
+        <update tableName="entreprise">
+            <column name="confirmation_livraison" value="false"/>
+            <column name="photo_signature_livraison" value=""/>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>
