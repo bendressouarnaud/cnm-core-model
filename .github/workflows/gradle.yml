@@ -34,7 +34,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v7
       with:
         image: ngbandama/cnm-core
-        tags: 1.0.7
+        tags: 1.0.8
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
@@ -45,5 +45,5 @@ jobs:
         username: ${{ secrets.VPS_USER }}
         key: ${{ secrets.SSH_PRIVATE }}
         script: |
-          docker pull ngbandama/cnm-core:1.0.7
-          docker service update --image ngbandama/cnm-core:1.0.7 --force cnmci_core
+          docker pull ngbandama/cnm-core:1.0.8
+          docker service update --image ngbandama/cnm-core:1.0.8 --force cnmci_core

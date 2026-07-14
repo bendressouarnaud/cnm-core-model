@@ -237,6 +237,7 @@ public class Artisan extends AbstractEntity{
 
     private String noteSuiviCallCenter;
     private OffsetDateTime datePaiementRdv;
+    private boolean paiementNonReverse;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "utilisateur_agent_assermente_id", nullable = true,
