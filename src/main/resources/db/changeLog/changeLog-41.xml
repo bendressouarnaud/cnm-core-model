@@ -1,0 +1,65 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1784038317897-1">
+        <createSequence incrementBy="50" sequenceName="effectuer_livraison_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784038317897-2">
+        <createTable tableName="effectuer_livraison">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="effectuer_livraisonPK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="apprenti_id" type="BIGINT"/>
+            <column name="artisan_id" type="BIGINT"/>
+            <column name="compagnon_id" type="BIGINT"/>
+            <column name="entreprise_id" type="BIGINT"/>
+            <column name="utilisateur_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784038317897-3">
+        <createIndex indexName="apprenti_eff_livraison_id_idx" tableName="effectuer_livraison">
+            <column name="apprenti_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784038317897-4">
+        <createIndex indexName="artisan_eff_livraison_id_idx" tableName="effectuer_livraison">
+            <column name="artisan_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784038317897-5">
+        <createIndex indexName="compagnon_eff_livraison_id_idx" tableName="effectuer_livraison">
+            <column name="compagnon_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784038317897-6">
+        <createIndex indexName="entreprise_eff_livraison_id_idx" tableName="effectuer_livraison">
+            <column name="entreprise_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784038317897-7">
+        <createIndex indexName="utilisateur_eff_livraison_id_idx" tableName="effectuer_livraison">
+            <column name="utilisateur_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784038317897-8">
+        <addForeignKeyConstraint baseColumnNames="apprenti_id" baseTableName="effectuer_livraison" constraintName="FK_apprenti_effectuer_livraison" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="apprenti" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784038317897-9">
+        <addForeignKeyConstraint baseColumnNames="artisan_id" baseTableName="effectuer_livraison" constraintName="FK_artisan_effectuer_livraison" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="artisan" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784038317897-10">
+        <addForeignKeyConstraint baseColumnNames="compagnon_id" baseTableName="effectuer_livraison" constraintName="FK_compagnon_effectuer_livraison" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="compagnon" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784038317897-11">
+        <addForeignKeyConstraint baseColumnNames="entreprise_id" baseTableName="effectuer_livraison" constraintName="FK_entreprise_effectuer_livraison" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="entreprise" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784038317897-12">
+        <addForeignKeyConstraint baseColumnNames="utilisateur_id" baseTableName="effectuer_livraison" constraintName="FK_utilisateur_effectuer_livraison" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="utilisateur" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
