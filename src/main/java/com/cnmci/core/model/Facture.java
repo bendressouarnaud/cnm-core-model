@@ -33,4 +33,6 @@ public class Facture extends AbstractEntity{
 
     private boolean paid;
     private String fichier;
+
+    private int typeFacture;
 }
