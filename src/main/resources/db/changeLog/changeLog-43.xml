@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1784214650541-1">
+        <addColumn tableName="paiement_enrolement">
+            <column name="facture_controle_id" type="bigint">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784214650541-2">
+        <createIndex indexName="facture_ctl_paimnt_enrolement_id_idx" tableName="paiement_enrolement">
+            <column name="facture_controle_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1784214650541-3">
+        <addForeignKeyConstraint baseColumnNames="facture_controle_id" baseTableName="paiement_enrolement" constraintName="FK_facture_ctl_paiement_enrol" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="facture" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

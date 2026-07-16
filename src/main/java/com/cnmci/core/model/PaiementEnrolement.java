@@ -20,7 +20,8 @@ import static jakarta.persistence.FetchType.LAZY;
                 @Index(name = "apprenti_enrolement_id_idx", columnList = "apprenti_id"),
                 @Index(name = "compagnon_enrolement_id_idx", columnList = "compagnon_id"),
                 @Index(name = "utilisateur_enrolement_id_idx", columnList = "utilisateur_id"),
-                @Index(name = "facture_paiement_enrolement_id_idx", columnList = "facture_id")
+                @Index(name = "facture_paiement_enrolement_id_idx", columnList = "facture_id"),
+                @Index(name = "facture_ctl_paimnt_enrolement_id_idx", columnList = "facture_controle_id")
         }
 )
 public class PaiementEnrolement extends AbstractEntity {
@@ -61,5 +62,9 @@ public class PaiementEnrolement extends AbstractEntity {
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "facture_id", nullable = true, foreignKey = @ForeignKey(name = "FK_facture_paiement_enrol"))
     private Facture facture;
+
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "facture_controle_id", nullable = true, foreignKey = @ForeignKey(name = "FK_facture_ctl_paiement_enrol"))
+    private Facture factureControle;
 
 }
