@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.time.OffsetDateTime;
+
 import static jakarta.persistence.FetchType.LAZY;
 
 @Getter
@@ -34,6 +36,7 @@ public class ProcesVerbal extends AbstractEntity {
     private boolean defautImmatriculationCompagnon;
     private boolean actif;
     private String codeValidation;
+    private OffsetDateTime dateReglement;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "utilisateur_id", nullable = false,
