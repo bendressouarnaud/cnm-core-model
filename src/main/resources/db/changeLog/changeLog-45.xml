@@ -1,0 +1,86 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1786141293235-2">
+        <createSequence incrementBy="50" sequenceName="proces_verbal_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-3">
+        <createTable tableName="proces_verbal">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="proces_verbalPK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="actif" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="code_validation" type="VARCHAR(255)"/>
+            <column name="defaut_immatriculation" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="defaut_immatriculation_apprenti" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="defaut_immatriculation_compagnon" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delai_reglement" type="SMALLINT"/>
+            <column name="numero_pv" type="VARCHAR(255)"/>
+            <column name="apprenti_id" type="BIGINT"/>
+            <column name="artisan_id" type="BIGINT"/>
+            <column name="compagnon_id" type="BIGINT"/>
+            <column name="entreprise_id" type="BIGINT"/>
+            <column name="utilisateur_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-4">
+        <createIndex indexName="apprenti_proces_verbal_id_idx" tableName="proces_verbal">
+            <column name="apprenti_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-5">
+        <createIndex indexName="artisan_proces_verbal_id_idx" tableName="proces_verbal">
+            <column name="artisan_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-6">
+        <createIndex indexName="compagnon_proces_verbal_id_idx" tableName="proces_verbal">
+            <column name="compagnon_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-7">
+        <createIndex indexName="entreprise_proces_verbal_id_idx" tableName="proces_verbal">
+            <column name="entreprise_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-8">
+        <createIndex indexName="utilisateur_proces_verbal_idx" tableName="proces_verbal">
+            <column name="utilisateur_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-9">
+        <addForeignKeyConstraint baseColumnNames="apprenti_id" baseTableName="proces_verbal" constraintName="FK_apprenti_proces_verbal" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="apprenti" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-10">
+        <addForeignKeyConstraint baseColumnNames="artisan_id" baseTableName="proces_verbal" constraintName="FK_artisan_proces_verbal" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="artisan" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-11">
+        <addForeignKeyConstraint baseColumnNames="compagnon_id" baseTableName="proces_verbal" constraintName="FK_compagnon_proces_verbal" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="compagnon" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-12">
+        <addForeignKeyConstraint baseColumnNames="entreprise_id" baseTableName="proces_verbal" constraintName="FK_entreprise_proces_verbal" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="entreprise" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-13">
+        <addForeignKeyConstraint baseColumnNames="utilisateur_id" baseTableName="proces_verbal" constraintName="FK_utilisateur_proces_verbal" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="utilisateur" validate="true"/>
+    </changeSet>
+    <!--<changeSet author="ankk (generated)" id="1786141293235-14">
+        <dropColumn columnName="numero_id" tableName="artisan"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786141293235-1">
+        <modifyDataType columnName="qualification" newDataType="varchar(100)" tableName="artisan"/>
+    </changeSet>-->
+</databaseChangeLog>
