@@ -244,4 +244,6 @@ public class Artisan extends AbstractEntity{
             foreignKey = @ForeignKey(name = "FK_utilisateur_agent_assermente_artisan"))
     private Utilisateur utilisateurAgentAssermente;
     private OffsetDateTime dateAssignationAssermente;
+
+    private boolean taggedByCnpsApi;
 }
