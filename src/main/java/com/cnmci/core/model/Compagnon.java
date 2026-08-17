@@ -44,6 +44,7 @@ public class Compagnon extends AbstractEntity{
 
     private String codeActivation;
     private boolean livraisonCarte;
+    private boolean documentSentByPostOffice;
     private int statutLivraison;
     private boolean confirmationLivraison;
     private String photoSignatureLivraison;
