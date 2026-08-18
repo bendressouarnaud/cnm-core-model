@@ -1,0 +1,53 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1786973857935-2">
+        <createSequence incrementBy="50" sequenceName="requete_sql_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786973857935-3">
+        <createTable tableName="requete_sql">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="requete_sqlPK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phrase" type="VARCHAR(255)"/>
+            <column name="requete" type="VARCHAR(300)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786972311775-4">
+        <addColumn tableName="apprenti">
+            <column name="document_sent_by_post_office" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <update tableName="apprenti">
+            <column name="document_sent_by_post_office" value="false"/>
+        </update>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786972311775-5">
+        <addColumn tableName="artisan">
+            <column name="document_sent_by_post_office" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <update tableName="artisan">
+            <column name="document_sent_by_post_office" value="false"/>
+        </update>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1786972311775-6">
+        <addColumn tableName="compagnon">
+            <column name="document_sent_by_post_office" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <update tableName="compagnon">
+            <column name="document_sent_by_post_office" value="false"/>
+        </update>
+    </changeSet>
+</databaseChangeLog>
