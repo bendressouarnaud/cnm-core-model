@@ -1,0 +1,123 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-2">
+        <createSequence incrementBy="50" sequenceName="co_gerant_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-3">
+        <createSequence incrementBy="50" sequenceName="gerant_entreprise_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-4">
+        <createTable tableName="co_gerant">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="co_gerantPK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="adresse_postal" type="VARCHAR(255)"/>
+            <column name="civilite" type="VARCHAR(255)"/>
+            <column name="contact1" type="VARCHAR(255)"/>
+            <column name="contact2" type="VARCHAR(255)"/>
+            <column name="date_emission_piece" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="date_naissance" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="lieu_naissance_autre" type="VARCHAR(255)"/>
+            <column name="livraison_carte" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nom" type="VARCHAR(255)"/>
+            <column name="numero_piece" type="VARCHAR(255)"/>
+            <column name="optin_mail" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="optin_sms" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="optin_whatsapp" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="piece_delivre" type="VARCHAR(255)"/>
+            <column name="piece_identite_recto" type="VARCHAR(50)"/>
+            <column name="piece_identite_verso" type="VARCHAR(50)"/>
+            <column name="prenom" type="VARCHAR(255)"/>
+            <column name="qualification" type="VARCHAR(255)"/>
+            <column name="quartier_residence" type="VARCHAR(255)"/>
+            <column name="sexe" type="VARCHAR(255)"/>
+            <column name="signature" type="VARCHAR(255)"/>
+            <column name="commune_residence_id" type="BIGINT"/>
+            <column name="commune_naissance_id" type="BIGINT"/>
+            <column name="nationalite" type="BIGINT"/>
+            <column name="statut_matrimonial_id" type="BIGINT"/>
+            <column name="type_document_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-5">
+        <createTable tableName="gerant_entreprise">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="gerant_entreprisePK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="actif" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="co_gerant_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entreprise_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-6">
+        <createIndex indexName="commune_naissance_cogerant_id_idx" tableName="co_gerant">
+            <column name="commune_naissance_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-7">
+        <createIndex indexName="commune_residence_cogerant_id_idx" tableName="co_gerant">
+            <column name="commune_residence_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-8">
+        <createIndex indexName="gerant_entreprise_co_id_idx" tableName="gerant_entreprise">
+            <column name="co_gerant_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-9">
+        <createIndex indexName="gerant_entreprise_ent_id_idx" tableName="gerant_entreprise">
+            <column name="entreprise_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-10">
+        <createIndex indexName="pays_cogerant_id_idx" tableName="co_gerant">
+            <column name="nationalite"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-11">
+        <addForeignKeyConstraint baseColumnNames="entreprise_id" baseTableName="gerant_entreprise" constraintName="FK_cogerant_entreprise_entreprise" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="entreprise" validate="true"/>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-12">
+        <addForeignKeyConstraint baseColumnNames="co_gerant_id" baseTableName="gerant_entreprise" constraintName="FK_cogerant_entreprise_gerant" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="co_gerant" validate="true"/>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-13">
+        <addForeignKeyConstraint baseColumnNames="commune_naissance_id" baseTableName="co_gerant" constraintName="FK_commune_naissance_gerant" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="commune" validate="true"/>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-14">
+        <addForeignKeyConstraint baseColumnNames="commune_residence_id" baseTableName="co_gerant" constraintName="FK_commune_residence_gerant" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="commune" validate="true"/>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-15">
+        <addForeignKeyConstraint baseColumnNames="nationalite" baseTableName="co_gerant" constraintName="FK_pays_gerant" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pays" validate="true"/>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-16">
+        <addForeignKeyConstraint baseColumnNames="statut_matrimonial_id" baseTableName="co_gerant" constraintName="FK_statut_matrimonial_gerant" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="statut_matrimonial" validate="true"/>
+    </changeSet>
+    <changeSet author="arnaud.ngbandama (generated)" id="1787648074883-17">
+        <addForeignKeyConstraint baseColumnNames="type_document_id" baseTableName="co_gerant" constraintName="FK_type_document_gerant" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="type_document" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
