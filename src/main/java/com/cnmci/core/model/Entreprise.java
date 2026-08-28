@@ -144,4 +144,7 @@ public class Entreprise extends AbstractEntity{
     @OneToMany(fetch = LAZY, mappedBy = "entreprise", orphanRemoval = true)
     private Collection<CommentaireEnrolement> commentaireEnrolements;
 
+    @OneToMany(fetch = LAZY, mappedBy = "entreprise", orphanRemoval = true)
+    private Collection<GerantEntreprise> gerantEntreprises;
+
 }
