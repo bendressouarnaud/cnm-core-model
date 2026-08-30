@@ -32,4 +32,8 @@ public class GainEnrolement extends AbstractEntity {
     @JoinColumn(name = "facture_id", nullable = true, foreignKey = @ForeignKey(name = "FK_facture_gain"))
     private Facture facture;
 
+    @Column(nullable = true)
+    private long requesterId;
+    @Column(length = 3, nullable = true)
+    private String requesterType;
 }
