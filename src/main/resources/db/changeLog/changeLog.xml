@@ -1570,4 +1570,5 @@
     <include file="db/changeLog/changeLog-48.xml"/>
     <include file="db/changeLog/changeLog-49.xml"/>
     <include file="db/changeLog/changeLog-50.xml"/>
+    <include file="db/changeLog/changeLog-51.xml"/>
 </databaseChangeLog>

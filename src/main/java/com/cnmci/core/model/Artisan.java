@@ -125,6 +125,7 @@ public class Artisan extends AbstractEntity{
     //private String specialite;
     private String quartierResidence;
     private String adressePostal;
+    @Column(unique = true)
     private String contact1;
     private String contact2;
     private String email;
