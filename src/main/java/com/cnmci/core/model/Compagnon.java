@@ -99,6 +99,9 @@ public class Compagnon extends AbstractEntity{
             foreignKey = @ForeignKey(name = "FK_commune_residence_compagnon"))
     private Commune communeResidence;
 
+    @OneToMany(fetch = LAZY, mappedBy = "compagnon", orphanRemoval = true)
+    private Collection<PaiementCheque> paiementCheques;
+
     private String quartierResidence;
     private String adressePostal;
     private String contact1;

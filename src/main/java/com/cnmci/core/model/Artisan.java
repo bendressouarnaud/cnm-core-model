@@ -230,6 +230,9 @@ public class Artisan extends AbstractEntity{
     @OneToMany(fetch = LAZY, mappedBy = "artisan", orphanRemoval = true)
     private Collection<CommentaireEnrolement> commentaireEnrolements;
 
+    @OneToMany(fetch = LAZY, mappedBy = "artisan", orphanRemoval = true)
+    private Collection<PaiementCheque> paiementCheques;
+
     @Enumerated(EnumType.ORDINAL)
     private ContactEtabliType contactEtabliType;
     @Enumerated(EnumType.ORDINAL)

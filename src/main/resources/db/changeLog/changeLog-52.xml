@@ -1,0 +1,88 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ankk (generated)" id="1790164524159-2">
+        <createSequence incrementBy="50" sequenceName="cheque_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-3">
+        <createSequence incrementBy="50" sequenceName="paiement_cheque_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-4">
+        <createTable tableName="cheque">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="chequePK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="libelle_banque" type="VARCHAR(40)"/>
+            <column name="nom_deposant" type="VARCHAR(70)"/>
+            <column name="numero_cheque" type="VARCHAR(30)"/>
+            <column name="utilisateur_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-5">
+        <createTable tableName="paiement_cheque">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="paiement_chequePK"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="version" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="apprenti_id" type="BIGINT"/>
+            <column name="artisan_id" type="BIGINT"/>
+            <column name="cheque_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="compagnon_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-6">
+        <createIndex indexName="cheque_apprenti_id_idx" tableName="paiement_cheque">
+            <column name="apprenti_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-7">
+        <createIndex indexName="cheque_artisan_id_idx" tableName="paiement_cheque">
+            <column name="artisan_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-8">
+        <createIndex indexName="cheque_compagnon_id_idx" tableName="paiement_cheque">
+            <column name="compagnon_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-9">
+        <createIndex indexName="cheque_paiement_id_idx" tableName="paiement_cheque">
+            <column name="cheque_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-10">
+        <createIndex indexName="numero_cheque_id_idx" tableName="cheque">
+            <column name="numero_cheque"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-11">
+        <createIndex indexName="utilisateur_cheque_id_idx" tableName="cheque">
+            <column name="utilisateur_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-12">
+        <addForeignKeyConstraint baseColumnNames="cheque_id" baseTableName="paiement_cheque" constraintName="FK_paiement_cheque" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cheque" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-13">
+        <addForeignKeyConstraint baseColumnNames="apprenti_id" baseTableName="paiement_cheque" constraintName="FK_paiement_cheque_apprenti" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="apprenti" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-14">
+        <addForeignKeyConstraint baseColumnNames="artisan_id" baseTableName="paiement_cheque" constraintName="FK_paiement_cheque_artisan" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="artisan" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-15">
+        <addForeignKeyConstraint baseColumnNames="compagnon_id" baseTableName="paiement_cheque" constraintName="FK_paiement_cheque_compagnon" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="compagnon" validate="true"/>
+    </changeSet>
+    <changeSet author="ankk (generated)" id="1790164524159-16">
+        <addForeignKeyConstraint baseColumnNames="utilisateur_id" baseTableName="cheque" constraintName="FK_utilisateur_cheque" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="utilisateur" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

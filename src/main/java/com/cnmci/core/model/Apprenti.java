@@ -105,6 +105,9 @@ public class Apprenti extends AbstractEntity{
     @JoinColumn(name = "utilisateur_id", nullable = true ,foreignKey = @ForeignKey(name = "FK_utilisateur_apprenti"))
     private Utilisateur utilisateur;
 
+    @OneToMany(fetch = LAZY, mappedBy = "apprenti", orphanRemoval = true)
+    private Collection<PaiementCheque> paiementCheques;
+
     private String quartierResidence;
     private String adressePostal;
     private String contact1;
